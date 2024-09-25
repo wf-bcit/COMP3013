@@ -1,5 +1,5 @@
 export function AlbumMain({id, name, coverImg, tracks}){
-
+//Create a section at the top for the main album and it's tracks
     return (
     <div className="albumMain-section">
         <div>
@@ -14,7 +14,7 @@ export function AlbumMain({id, name, coverImg, tracks}){
 }
 
 export function AlbumSub({name, coverImg}){
-
+//Create a section at the bottom for an album name and album cover
     return (
 
     <div className="albumSub-section">
