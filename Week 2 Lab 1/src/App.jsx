@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
 
-      <h1 className="title-text">COMP3013 - Week 2 Lab 1</h1>
+      <h1 className="title-text">COMP3013 - Week 22 Lab 1</h1>
       {
         <AlbumMain
           id={albums[i].id}
