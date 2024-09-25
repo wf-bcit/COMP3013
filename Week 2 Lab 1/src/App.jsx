@@ -12,7 +12,6 @@ function App() {
       <h1 className="title-text">COMP3013 - Week 2 Lab 1</h1>
       {
         <AlbumMain
-          id={albums[i].id}
           name={albums[i].name}
           coverImg={albums[i].coverImg} 
           tracks={albums[i].tracks}
