@@ -3,7 +3,6 @@ import { albums } from "./data";
 import { useState } from "react";
 
 
-
 export function AblumList() 
 {
   const [albumName, setAlbumName] = useState('');
