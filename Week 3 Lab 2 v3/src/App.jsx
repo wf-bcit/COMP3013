@@ -1,33 +1,41 @@
 import { AlbumMain, AlbumSub } from "./Album";
 import { albums } from "./data";
 //import { MyInput } from "./MyInput";
-import { List } from "./List2"
+//import { List } from "./List2"
 import { useState } from "react";
 
+let nextId = 0;
 
-// import { useState } from 'react';
+export function AblumList() {
+  const [albumName, setAlbumName] = useState('');
+  const [coverURL, setCoverURL] = useState('');
+  const [listOfAlbums, setListOfAlbums] = useState(albums);
 
-// let nextId = 0;
+  const albumNameEntry = (e) => {setAlbumName(e.target.value)};
+  const coverURLEntry = (e) => {setCoverURL(e.target.value)};
+  
+  const albumAdd = () => {
+    let count = listOfAlbums.length;
+    setListOfAlbums( [ ...listOfAlbums, { id: count, name: albumName, coverImg: coverURL, tracks: ["Track1", "Track2", "Track3", "Track4"] } ] ); 
+  };
 
-// function List() {
-//   const [name, setName] = useState('');
-//   const [artists, setArtists] = useState([]);
-//   const ListFunction = () => { setArtists([...artists, { id: nextId++, name: name }  ]);}
-
-//   return (
-//     <div>
-//       <h1>Inspiring sculptors:</h1>
-//       <input value={name} onChange={e => setName(e.target.value)}/>
-//       <button onClick={ListFunction}>Add</button>
-//       <ul>
-//         {artists.map(artist => (
-//           <li key={artist.id}>{artist.name}</li>
-//         ))}
-//       </ul>
-//     <div/>
-//   );
-// }
-
+  return (
+    <>
+      <h1>Add Album:</h1>
+      <input value={albumName} onChange={albumNameEntry} placeholder="Add Album"/>
+      <input value={coverURL} onChange={coverURLEntry} placeholder="Cover URL"/>
+      <button onClick={albumAdd}>Add</button>
+      <ul>
+        {listOfAlbums.map(album => (
+        <AlbumSub
+          name={album.name}
+          coverImg={album.coverImg} 
+        />
+      ))}
+      </ul>
+    </>
+  );
+}
 
 
 function ZoopApp()
@@ -50,11 +58,10 @@ function ZoopApp()
     console.log("AFTER");
     console.log("albums = ");
     console.log(albums);
-    //setAlbumList(albums);
+    setAlbumList(albums);
     // setBlam(blam.push(newAlbum));
     console.log("albumList = ");
     console.log(albumList);
-    
   };
 
 	return(
@@ -95,7 +102,7 @@ function App() {
 
     <ZoopApp />
 
-    <List />
+    <AblumList />
 
     </div>  
   );
