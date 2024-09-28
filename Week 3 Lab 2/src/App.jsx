@@ -57,7 +57,7 @@ function CountApp()
 	return(
 	<div>
 		<button onClick={increment}>+</button>
-		<h1>The count is: {count}</h1>
+		<h1>The count is: {count}</h1>{count}
 		<button onClick={decrement}>-</button>
 	</div>	
 	);
@@ -74,23 +74,29 @@ function ZoopApp()
   let [blam, setBlam] = useState(albums);
 
   const Boom = () => {
-    const albumName_ = document.getElementById("zoopName");
-    const coverURL_ = document.getElementById("zoopURL");
+    console.log("albums = ");
+    console.log(albums);
+    const albumName_ = "Pinky";//document.getElementById("zoopName");
+    const coverURL_ = "https://www.udiscovermusic.com/wp-content/uploads/2017/08/Pink-Floyd-Dark-Side-Of-The-Moon.jpg"; //document.getElementById("zoopURL");
     let albumCount = albums.length;
-    let newAlbum = { id: albumCount, name: albumName_.value, coverImg: coverURL_.value,  tracks: ["Track1", "Track2", "Track3", "Track4"]};
+    let newAlbum = { id: albumCount, name: albumName_, coverImg: coverURL_, tracks: ["Track1", "Track2", "Track3", "Track4"]};
     albums.push(newAlbum);
+    console.log("albums = ");
     console.log(albums);
     setBlam(albums);
+    console.log("blam = ");
+    console.log(blam);
+    setCount(count+1);
   }
 
 	return(
 	<div>
     <h1>Zoop Begin</h1>
+    <button onClick={increment}>+</button>
+		<h1>The count is: {count}</h1>{count}
+		<button onClick={decrement}>-</button>
     <input type="text" name="zoopName" id="zoopName" />
     <input type="text" name="zoopURL" id="zoopURL" />
-		<button onClick={increment}>+</button>
-		<h1>The count is: {count}</h1>
-		<button onClick={decrement}>-</button>
     <button onClick={Boom}>ZOOP</button>
     {blam.map((album) => (
         <AlbumSub
