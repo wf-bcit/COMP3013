@@ -3,6 +3,30 @@ import { albums } from "./data";
 import { useState } from "react";
 
 
+function App() 
+{
+  let i=0;
+
+  return (
+    <div>
+
+    <h1 className="title-text">COMP3013 - Week 3 Lab 2</h1>
+    {
+      <AlbumMain
+        name={albums[i].name}
+        coverImg={albums[i].coverImg} 
+        tracks={albums[i].tracks}
+      />
+    }
+
+    <h2 className="select-text">Select an Album</h2>
+    <AblumList />
+
+    </div>  
+  );
+}
+
+
 export function AblumList() 
 {
   const [albumName, setAlbumName] = useState('');
@@ -36,29 +60,6 @@ export function AblumList()
       ))}
       </ul>
     </>
-  );
-}
-
-function App() 
-{
-  let i=0;
-
-  return (
-    <div>
-
-    <h1 className="title-text">COMP3013 - Week 3 Lab 2</h1>
-    {
-      <AlbumMain
-        name={albums[i].name}
-        coverImg={albums[i].coverImg} 
-        tracks={albums[i].tracks}
-      />
-    }
-
-    <h2 className="select-text">Select an Album</h2>
-    <AblumList />
-
-    </div>  
   );
 }
 
