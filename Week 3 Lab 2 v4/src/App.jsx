@@ -13,6 +13,7 @@ export function AblumList()
   const coverURLEntry = (e) => {setCoverURL(e.target.value)};
   const albumAdd = () =>
   {
+    console.log(...listOfAlbums);
     let count = listOfAlbums.length;
     setListOfAlbums( [ ...listOfAlbums, { id: count, name: albumName, coverImg: coverURL, tracks: ["Track1", "Track2", "Track3", "Track4"] } ] );
     setAlbumName('');
