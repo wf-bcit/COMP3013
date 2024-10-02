@@ -18,7 +18,7 @@ export function AlbumMain({name, coverImg, tracks}){
 
 export function AlbumList({albums}){
 
-  //Create a list of albumns 
+  //Create a list of albums 
   const [albumName, setAlbumName] = useState('');
   const [coverURL, setCoverURL] = useState('');
   const [listOfAlbums, setListOfAlbums] = useState(albums);
@@ -54,7 +54,7 @@ export function AlbumList({albums}){
 }
 
 export function AlbumLineItem({id, name, coverImg}){
-  
+
   //Create a line item with album name and cover
       return (
       <li className="album-list-line-item"><button id={id}><img src={coverImg} alt="album cover small" /></button>{name}</li>
