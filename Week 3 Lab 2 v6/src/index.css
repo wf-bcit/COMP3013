@@ -39,11 +39,16 @@ margin-left: 15px;
   text-align: center;
 }
 
+
+.album-list-section{
+  margin-left: 0px;
+}
+
 .album-list-line-item{
-display: flex;
-align-items: center; 
-font-size: 1.25em;
-font-weight: bold;
+  display: flex;
+  align-items: center; 
+  font-size: 1.25em;
+  font-weight: bold;
 }
 
 .album-list-line-item button{
