@@ -1,4 +1,4 @@
-import { AlbumMain, AlbumSub, AlbumList } from "./Album";
+import { AlbumMain, AlbumList } from "./Album";
 import { albums } from "./data";
 
 

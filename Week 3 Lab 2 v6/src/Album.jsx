@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 export function AlbumMain({name, coverImg, tracks}){
-//Create a main section for an album and it's tracks
+
+  //Create a main section for an album and it's tracks
     return (
     <div className="albumMain-section">
         <div>
@@ -15,16 +16,9 @@ export function AlbumMain({name, coverImg, tracks}){
     );
 }
 
-export function AlbumSub({id, name, coverImg}){
-//Create a sub section for an album name and cover
-    return (
-    <li className="album-list-line-item"><button id={id}><img src={coverImg} alt="album cover small" /></button>{name}</li>
-    );
-}
+export function AlbumList({albums}){
 
-
-export function AlbumList({albums}) 
-{
+  //Create a list of albumns 
   const [albumName, setAlbumName] = useState('');
   const [coverURL, setCoverURL] = useState('');
   const [listOfAlbums, setListOfAlbums] = useState(albums);
@@ -40,22 +34,29 @@ export function AlbumList({albums})
   };
 
   return (
-    <>
+    <div>
       <div className="add-album-section">
-        <h3>Add Album:</h3>
         <input className="album-input" value={albumName} onChange={albumNameEntry} placeholder="Add Album"/>
         <input className="album-input" value={coverURL} onChange={coverURLEntry} placeholder="Cover URL"/>
         <button className="album-input" onClick={albumAdd}>ADD</button>
       </div>
       <ul className="album-list-section">
         {listOfAlbums.map(album => (
-        <AlbumSub
+        <AlbumLineItem
           id={album.id}
           name={album.name}
           coverImg={album.coverImg} 
         />
       ))}
       </ul>
-    </>
+    </div>
   );
+}
+
+export function AlbumLineItem({id, name, coverImg}){
+  
+  //Create a line item with album name and cover
+      return (
+      <li className="album-list-line-item"><button id={id}><img src={coverImg} alt="album cover small" /></button>{name}</li>
+      );
 }
