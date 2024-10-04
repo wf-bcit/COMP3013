@@ -4,10 +4,11 @@ import { ListGroupCities } from "./Cities";
 
 export function ListGroup() {
     const cities = ["New York", "Paris", "Tokyo", "London"];
-    const [chosenCityIndex, setChosenCityIndex] = useState(-1);
+    const [chosenCityIndex, setChosenCityIndex] = useState();
+
     return (
       <>
-      <ListGroupHeader cities={cities} chosenCityIndex={chosenCityIndex} />
+      <ListGroupHeader city={cities[chosenCityIndex]} />
       <ListGroupCities cities={cities} chosenCityIndex={chosenCityIndex} setChosenCityIndex={setChosenCityIndex} />
       </>
     );
