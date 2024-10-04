@@ -16,6 +16,5 @@ export function ListGroupCities({cities, chosenCityIndex, setChosenCityIndex}) {
 export function GroupCity({city, index, chosenCityIndex, setChosenCityIndex})
 {
   const handleClickCity = (index) => { setChosenCityIndex(index) };
-
   return (<li onClick={() => handleClickCity(index)} className={(index==chosenCityIndex) ? "list-group-item active" : "list-group-item"} key={city}>{city}</li>);
 }
