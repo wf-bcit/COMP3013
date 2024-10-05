@@ -1,20 +1,20 @@
 import { useState } from "react";
 
-export function ListGroupCities({cities, chosenCityIndex, setChosenCityIndex}) {
+export function ListGroupCities({cities, selectedCityIndex, setSelectedCityIndex}) {
 
     return (
       <>     
         <ul className="list-group">
           {cities.map((city, index) => (
-            <GroupCity city={city} index={index} chosenCityIndex={chosenCityIndex} setChosenCityIndex={setChosenCityIndex} />
+            <GroupCity city={city} index={index} selectedCityIndex={selectedCityIndex} setSelectedCityIndex={setSelectedCityIndex} />
           ))}
         </ul>
       </>
     );
   }
 
-export function GroupCity({city, index, chosenCityIndex, setChosenCityIndex})
+export function GroupCity({city, index, selectedCityIndex, setSelectedCityIndex})
 {
-  const handleClickCity = (index) => { setChosenCityIndex(index) };
-  return (<li onClick={() => handleClickCity(index)} className={(index==chosenCityIndex) ? "list-group-item active" : "list-group-item"} key={city}>{city}</li>);
+  const handleClickCity = (index) => { setSelectedCityIndex(index) };
+  return (<li onClick={() => handleClickCity(index)} className={(index==selectedCityIndex) ? "list-group-item active" : "list-group-item"} key={index}>{city}</li>);
 }
