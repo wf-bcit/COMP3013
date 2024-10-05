@@ -9,9 +9,6 @@ function App() {
     <div>
       <h1>Hello Homepage</h1>
       <ListGroup />
-      {/* <Input text={text} setText={setText} />
-      <Input text={text} setText={setText} /> */}
-      {/* <Input /> */}
     </div>
   );
 }
