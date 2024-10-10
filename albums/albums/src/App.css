@@ -1,0 +1,36 @@
+.select-album {
+  text-align: right;
+  padding: 10px;
+}
+.album-list {
+  border: 1px solid gray;
+  margin-top: 5px;
+}
+
+.album {
+  display: flex;
+  padding: 10px;
+}
+.album:hover {
+  cursor: pointer;
+}
+.album-name {
+  font-size: 20px;
+}
+
+.album-cover {
+  margin-right: 5px;
+  border-radius: 33px;
+  height: 50px;
+  width: 50px;
+}
+
+.album-detail {
+  display: flex;
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+ol li {
+  font-size: 25px;
+}
